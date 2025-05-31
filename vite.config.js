@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-const GITHUB_REPO_NAME = 'Tailwindcsspropertiesexplorer';
+const GITHUB_REPO_NAME = 'Tailwindcss';
 export default defineConfig({
   base: `/${GITHUB_REPO_NAME}/`,
   plugins: [react(),tailwindcss(),],
