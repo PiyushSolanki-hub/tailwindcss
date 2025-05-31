@@ -3,7 +3,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import UserCotext from './MainDataDirectory/UserCotext.jsx'
-const GITHUB_REPO_NAME = 'Tailwindcsspropertiesexplorer';
+const GITHUB_REPO_NAME = 'Tailwindcss';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter basename={`/${GITHUB_REPO_NAME}/`}> 
