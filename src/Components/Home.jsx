@@ -39,8 +39,8 @@ const Home = () => {
     }, [charIndex, Text]);
 
     const isTypingComplete = charIndex === Text.length;
-    const [upperarrowleft, setupperarrowleft] = useState("1px");
-    const [downarrowleft, setdownarrowleft] = useState("1px");
+    const [upperarrowleft, setupperarrowleft] = useState(1);
+    const [downarrowleft, setdownarrowleft] = useState(1);
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
@@ -195,17 +195,17 @@ const Home = () => {
                 <div className='flex gap-10 w-full'>
                     <div className='border-[1px] rounded-xl p-10 w-1/2 bg-[#04030F] relative text-white flex flex-col text-2xl justify-around overflow-hidden'>
                         {(currentView === "variables" || currentView === "values") && (
-                            <div
-                                className='absolute p-3 bg-black top-0 right-10 hover:cursor-pointer transition-all duration-300'
-                                onMouseEnter={() => { setupperarrowleft("-6px"); setdownarrowleft("-6px") }}
-                                onMouseLeave={() => { setupperarrowleft("1px"); setdownarrowleft("1px") }}
-                                onClick={handleBackClick}
-                            >
-                                <div className={`h-[40px] w-[3px] bg-white transform rotate-90`}></div>
-                                <div className={`h-[25px] w-[3px] bg-white absolute top-[11px] transition-all duration-300 left-[${upperarrowleft}] transform rotate-45`}></div>
-                                <div className={`h-[25px] w-[3px] bg-white absolute top-[28px] transition-all duration-300 left-[${downarrowleft}] transform -rotate-45`}></div>
-                            </div>
-                        )}
+                            <div
+                                className='absolute p-3 bg-black top-0 right-10 hover:cursor-pointer transition-all duration-300'
+                                onMouseEnter={() => { setupperarrowleft(-6); setdownarrowleft(-6) }}
+                                onMouseLeave={() => { setupperarrowleft(1); setdownarrowleft(1) }}
+                                onClick={handleBackClick}
+                            >
+                                <div className={`h-[40px] w-[3px] bg-white transform rotate-90`}></div>
+                                <div className={`h-[25px] w-[3px] bg-white absolute top-[11px] transition-all duration-300 transform rotate-45`} style={{ left: `${upperarrowleft}px` }}></div>
+                                <div className={`h-[25px] w-[3px] bg-white absolute top-[28px] transition-all duration-300 transform -rotate-45`} style={{ left: `${downarrowleft}px` }}></div>
+                            </div>
+                        )}
                         <div className={`transition-all duration-500 ease-in-out ${currentView === "categories" ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full absolute"}`}>
                             {currentView === "categories" &&
                                 propertycategory.map((single, key) => (
